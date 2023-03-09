@@ -1,3 +1,4 @@
+import DatePicker from "@/components/datepicker/DatePicker";
 import Layout from "@/components/layout/Layout";
 import { Icon } from "@iconify/react";
 import { Space_Grotesk } from "next/font/google";
@@ -25,8 +26,8 @@ export default function index() {
         </div>
       </div>
       <div className="w-full min-h-screen flex justify-center items-center">
-        <div className="container grid grid-cols-2 gap-10">
-          <div className="col-span-1 flex justify-end">
+        <div className="container grid grid-cols-2">
+          <div className="col-span-1 flex justify-center">
             <div className="flex flex-col">
               <h1 className={`${space_Grotesk.className} text-8xl font-bold`}>
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00AAFF] to-[#00FFAA]">
@@ -42,22 +43,20 @@ export default function index() {
               <h2 className="text-white text-xl font-light">
                 Planet approximating of rising and setting time
               </h2>
-              <section className="flex flex-row items-center bg-zinc-900/70 border-2 border-white/70 rounded-full mt-4 px-5">
-                <Icon
-                  icon="ph:planet-fill"
-                  className="text-gray-50 text-8xl py-2"
-                />
-                <nav className="flex flex-col gap-1 text-white/50 text-xl font-light mx-4">
-                  <ul className="flex flex-row gap-5">
-                    <li className="text-white font-medium">JUPITER</li>
+              <section className="flex flex-row border-2 border-white/10 drop-shadow-xl rounded-gl mt-5 p-3 rounded-2xl">
+                <nav className="flex flex-col text-white/50 text-lg font-light mt-6 ml-5">
+                  <ul className="flex flex-col gap-5 ">
+                    <li className="text-amber-500 font-extrabold">
+                      <div className="inline-flex h-4 w-4 rounded-full bg-amber-500 mr-2 items-center" />
+                      JUPITER
+                    </li>
                     <li>MERCURY</li>
                     <li>MARS</li>
-                  </ul>
-                  <ul className="flex flex-row gap-3">
                     <li>SATURN</li>
                     <li>VENUS</li>
                   </ul>
                 </nav>
+                <DatePicker />
               </section>
             </div>
           </div>
