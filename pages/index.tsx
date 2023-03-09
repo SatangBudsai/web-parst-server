@@ -1,5 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import { Icon } from "@iconify/react";
+import { Space_Grotesk } from "next/font/google";
+const space_Grotesk = Space_Grotesk({ subsets: ["latin"] });
 
 export default function index() {
   return (
@@ -26,37 +28,37 @@ export default function index() {
         <div className="container grid grid-cols-2 gap-10">
           <div className="col-span-1 flex justify-end">
             <div className="flex flex-col">
-              <h1 className="text-8xl font-bold">
+              <h1 className={`${space_Grotesk.className} text-8xl font-bold`}>
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00AAFF] to-[#00FFAA]">
                   RISING
                 </span>
                 <span className="text-5xl font-bold text-white ml-5">&</span>
               </h1>
-              <h1 className="text-8xl font-bold">
+              <h1 className={`${space_Grotesk.className} text-8xl font-bold`}>
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FFAA00] to-[#FF00AA]">
                   SETTING
                 </span>
               </h1>
-              <h3 className="text-white text-xl font-light">
+              <h2 className="text-white text-xl font-light">
                 Planet approximating of rising and setting time
-              </h3>
-              <div className="flex flex-row items-center bg-zinc-900/70 border-2 border-white/70 rounded-full mt-4 px-5 gap-4">
+              </h2>
+              <section className="flex flex-row items-center bg-zinc-900/70 border-2 border-white/70 rounded-full mt-4 px-5">
                 <Icon
                   icon="ph:planet-fill"
                   className="text-gray-50 text-8xl py-2"
                 />
-                <div className="flex flex-col gap-1 text-white/50 text-xl font-light">
-                  <div className="flex flex-row gap-5">
-                    <div className="text-white font-medium">JUPITER</div>
-                    <div>MERCURY</div>
-                    <div>MARS</div>
-                  </div>
-                  <div className="flex flex-row gap-3">
-                    <div>SATURN</div>
-                    <div>VENUS</div>
-                  </div>
-                </div>
-              </div>
+                <nav className="flex flex-col gap-1 text-white/50 text-xl font-light mx-4">
+                  <ul className="flex flex-row gap-5">
+                    <li className="text-white font-medium">JUPITER</li>
+                    <li>MERCURY</li>
+                    <li>MARS</li>
+                  </ul>
+                  <ul className="flex flex-row gap-3">
+                    <li>SATURN</li>
+                    <li>VENUS</li>
+                  </ul>
+                </nav>
+              </section>
             </div>
           </div>
         </div>
