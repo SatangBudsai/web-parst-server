@@ -2,36 +2,41 @@
 /* https: //github.com/gpbl/react-day-picker/blob/master/packages/react-day-picker/src/style.css */
 
 .rdp-day_today:not(.rdp-day_outside) {
-   @apply text-yellow-500 text-[150%]
+  @apply text-yellow-500 text-[150%];
 }
 
-.rdp-day_selected:not([disabled]){
-    @apply font-bold border-2 border-current bg-transparent
+.rdp-day_selected:not([disabled]) {
+  @apply font-bold border-2 border-current bg-transparent;
 }
 
-.rdp-day_selected:hover:not([disabled]){
-    @apply bg-transparent
+.rdp-day_selected:hover:not([disabled]) {
+  @apply bg-transparent;
 }
-.rdp-day_selected:hover:enabled{
-    @apply !bg-transparent
+.rdp-day_selected:hover:enabled {
+  @apply !bg-transparent;
 }
 .rdp-day_selected,
 .rdp-day_selected:focus-visible,
 .rdp-day_selected:hover {
-    @apply bg-transparent border-yellow-400 !text-yellow-400
+  @apply bg-transparent border-yellow-400 !text-yellow-400;
 }
-
+.rdp-button {
+  @apply !text-lg !h-8 !w-8;
+}
 .rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
-    @apply !bg-zinc-800
+  @apply !bg-zinc-800;
 }
-.rdp-dropdown:focus-visible:not([disabled])+.rdp-caption_label {
-    @apply !bg-zinc-800 !border-white
+.rdp-caption_label {
+  @apply !text-lg !mt-1;
+}
+.rdp-dropdown:focus-visible:not([disabled]) + .rdp-caption_label {
+  @apply !bg-zinc-800 !border-white;
 }
 
 .rdp-dropdown {
-    @apply !cursor-pointer !pl-2
+  @apply !cursor-pointer !pl-2;
 }
 
 .rdp-dropdown option {
-    @apply !bg-zinc-800
+  @apply !bg-zinc-800;
 }
