@@ -24,13 +24,13 @@
   @apply !text-lg !h-8 !w-8;
 }
 .rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
-  @apply !bg-zinc-800;
+  @apply !bg-zinc-700;
 }
 .rdp-caption_label {
   @apply !text-lg !mt-1;
 }
 .rdp-dropdown:focus-visible:not([disabled]) + .rdp-caption_label {
-  @apply !bg-zinc-800 !border-white;
+  @apply !bg-transparent !border-white;
 }
 
 .rdp-dropdown {

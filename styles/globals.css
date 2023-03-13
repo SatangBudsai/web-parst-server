@@ -2,7 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
+}
+.MuiSlider-valueLabel {
+  background-color: black !important;
+  border: 0.15rem solid goldenrod !important;
+  border-radius: 0.5rem !important;
+  color: goldenrod !important;
 }
