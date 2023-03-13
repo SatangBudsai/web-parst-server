@@ -7,7 +7,7 @@ import { useState } from "react";
 const space_Grotesk = Space_Grotesk({ subsets: ["latin"] });
 
 function valuetext(value: number) {
-  return `${value}°C`;
+  return `${value}`;
 }
 
 export default function index() {
@@ -73,8 +73,9 @@ export default function index() {
                 getAriaLabel={() => "Temperature range"}
                 value={value}
                 onChange={handleChange}
-                valueLabelDisplay="auto"
                 getAriaValueText={valuetext}
+                color="secondary"
+                valueLabelDisplay="on"
               />
             </div>
           </div>
