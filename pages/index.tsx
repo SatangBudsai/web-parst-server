@@ -1,21 +1,49 @@
-import DatePicker from "@/components/datepicker/DatePicker";
-import Layout from "@/components/layout/Layout";
-import { Icon } from "@iconify/react";
-import Slider from "@mui/material/Slider";
-import { Space_Grotesk } from "next/font/google";
-import { useState } from "react";
-const space_Grotesk = Space_Grotesk({ subsets: ["latin"] });
+import DatePicker from "@/components/datepicker/DatePicker"
+import Layout from "@/components/layout/Layout"
+import { Icon } from "@iconify/react"
+import Slider from "@mui/material/Slider"
+import { Space_Grotesk } from "next/font/google"
+import { useState } from "react"
+const space_Grotesk = Space_Grotesk({ subsets: ["latin"] })
+import {
+  Chart as ChartJS,
+  RadialLinearScale,
+  PointElement,
+  LineElement,
+  Filler,
+  Tooltip,
+  Legend,
+} from 'chart.js'
+import { Radar } from 'react-chartjs-2'
 
-function valuetext(value: number) {
-  return `${value}`;
+// function valuetext(value: number) {
+//   return `${value}`
+// }
+export const data = {
+  labels: ['Thing 1', 'Thing 2', 'Thing 3', 'Thing 4', 'Thing 5', 'Thing 6'],
+  datasets: [
+    {
+      label: '# of Votes',
+      data: [2, 9, 3, 5, 2, 3],
+      backgroundColor: '#ffaa003e',
+      borderColor: '#FFAA00',
+      borderWidth: 1,
+    },
+  ],
 }
 
 export default function index() {
-  const [value, setValue] = useState<number[]>([20, 37]);
+  const [value, setValue] = useState<number[]>([2200, 2250])
 
-  const handleChange = (event: Event, newValue: number | number[]) => {
-    setValue(newValue as number[]);
-  };
+  ChartJS.register(
+    RadialLinearScale,
+    PointElement,
+    LineElement,
+    Filler,
+    Tooltip,
+    Legend
+  )
+
   return (
     <Layout>
       {/* <img
@@ -70,17 +98,20 @@ export default function index() {
                 <DatePicker />
               </section>
               <Slider
-                getAriaLabel={() => "Temperature range"}
-                value={value}
-                onChange={handleChange}
-                getAriaValueText={valuetext}
+                getAriaLabel={() => "year range"}
                 color="secondary"
                 valueLabelDisplay="on"
+                defaultValue={value}
+                min={2200}
+                max={2300}
               />
             </div>
+          </div>
+          <div className="col-span-1 justify-center w-fit">
+            <Radar data={data}/>
           </div>
         </div>
       </div>
     </Layout>
-  );
+  )
 }
